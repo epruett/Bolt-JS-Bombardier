@@ -1,0 +1,36 @@
+async function startProgram() {
+	await speak(buildString('Bomb will go off in 5 seconds'), true);
+	await delay(1);
+	setMainLed({ r: 255, g: 3, b: 0 });
+	await Sound.Effects.BeepDouble.play(true);
+	await speak(buildString('5'), true);
+	setMainLed({ r: 255, g: 255, b: 255 });
+	await delay(1);
+	setMainLed({ r: 255, g: 0, b: 1 });
+	await Sound.Effects.BeepDouble.play(true);
+	await speak(buildString('4'), true);
+	setMainLed({ r: 255, g: 255, b: 255 });
+	await delay(1);
+	setMainLed({ r: 255, g: 0, b: 27 });
+	await Sound.Effects.BeepDouble.play(true);
+	await speak(buildString('3'), true);
+	setMainLed({ r: 255, g: 255, b: 255 });
+	await delay(1);
+	setMainLed({ r: 255, g: 0, b: 11 });
+	await Sound.Effects.BeepDouble.play(true);
+	await speak(buildString('2'), true);
+	setMainLed({ r: 255, g: 255, b: 255 });
+	await delay(1);
+	setMainLed({ r: 255, g: 9, b: 0 });
+	await Sound.Effects.BeepDouble.play(true);
+	await speak(buildString('1'), true);
+	setMainLed({ r: 255, g: 255, b: 255 });
+	await delay(1);
+	await speak(buildString('0'), true);
+	setMainLed({ r: 255, g: 0, b: 18 });
+	await delay(0.001);
+	await rawMotor(255, 255, 2);
+	setMainLed({ r: 255, g: 113, b: 0 });
+	await delay(0.001);
+	await rawMotor(255, -255, 10);
+}
